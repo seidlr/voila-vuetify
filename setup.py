@@ -51,6 +51,7 @@ class DevelopCmd(develop):
     prefix_targets = [
         ("voila/templates", 'vuetify-base'),
         ("voila/templates", 'vuetify-default'),
+        ("voila/templates", 'vuetify-tacticon'),
         ("voila/templates", 'custom')
     ]
     def run(self):
@@ -85,7 +86,7 @@ for (dirpath, dirnames, filenames) in os.walk('share/jupyter/voila/templates/'):
 
 
 setup(
-    name='voila-vuetify',
+    name='voila-vuetify-tacticon',
     version="0.0.1a8",
     description="A vuetify template for voila",
     data_files=data_files,

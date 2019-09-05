@@ -1,0 +1,60 @@
+{% raw -%}
+<div id="app" style="display: none">
+    <v-app>
+        <v-layout v-if="loading" align-center justify-center>
+            <v-card class="pa-2">
+                <v-progress-linear indeterminate></v-progress-linear>
+
+                <v-card-title primary-title>
+                    <h1>Loading</h1>
+                </v-card-title>
+            </v-card>
+        </v-layout>
+        <v-layout v-else>
+            <v-toolbar app absolute>
+                <v-toolbar-title>{{ title }}</v-toolbar-title>
+            </v-toolbar>
+
+            <v-content>
+                <jupyter-widget-mount-point mount-id="content-main">
+                        <v-container>
+                                Placeholder for widget with mount id <i>content-main</i>.
+                        </v-container>
+                </jupyter-widget-mount-point>
+            <v-footer app absolute>
+            <v-toolbar>
+                Follow us on Twitter <a href="https://twitter.com/rob_seidl"> @rob_seidl</a> & <a href="https://twitter.com/Mo_Nbg">@Mo_Nbg</a>
+            </v-toolbar>
+
+            </v-footer>
+            </v-content>
+
+        </v-layout>
+
+    </v-app>
+</div>
+
+<script>
+
+var app = new Vue({
+    el: '#app',
+    mounted() {
+        document.querySelector('#app').removeAttribute("style");
+    },
+    data() {
+        return {
+            loading: true,
+            title: 'Tacticon - Setpieces',
+            icons: [
+            'fab fa-facebook',
+            'fab fa-twitter',
+            'fab fa-google-plus',
+            'fab fa-linkedin',
+            'fab fa-instagram'
+    ]
+        }
+    }
+});
+
+</script>
+{% endraw -%}
